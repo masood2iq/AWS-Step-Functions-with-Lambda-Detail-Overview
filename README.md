@@ -18,6 +18,7 @@ Workflows are made up of a series of `steps`, with the output of one step acting
 
 Visual workflow in Step Functions work as
 
+![](./images/image4.png)
 
 
 Where, `Lambda` provides support for serverless functions that can be invoked on-demand or based on an event, and only during their invocation, compute power is used. This provides flexibility in terms of resource usages, and hence reduces costs but there is a 15 mins time limitation for a Lambda function execution, and in several use-cases, the execution may need more time.
@@ -27,6 +28,7 @@ Coming back to `Step functions`, workflows can be designed and executed that sti
 ## Let’s Create a Simple Step Function
 Login to AWS console and go to the Step Functions console, click on the `State machines` on left side and click on the `Create state machine` button.
 
+![](./images/image17.png)
 
 
 Select `Write your workflow in code`, select `Standard`, write the given code and click on the `Next` button.
@@ -104,36 +106,46 @@ Select `Write your workflow in code`, select `Standard`, write the given code an
   }
 }
 ```
+![](./images/image10.png)
 
 
 Give the `Name`, create a new `Role` if it’s not already created. Go to `IAM`, click left side on `Roles` and click on `Create role` button.
 
+![](./images/image26.png)
 
 
 Select `AWS service`, in `Use case` search for `Step functions`, select and click on the `Next` button.
 
+![](./images/image21.png)
 
 
 In permissions `AWSLambdaRole` already added, click on the `Next` button.
 
+![](./images/image16.png)
 
 
 Give the Name and click on `Create role` button.
 
+![](./images/image13.png)
 
 
 After creation, go inside the role and click on `Add permissions`, `Attach policies` to attach `CloudWatch` and `XRay` policies permissions and click on the `Attach policies` button.
 
+![](./images/image14.png)
 
 
+![](./images/image7.png)
 
 
+![](./images/image9.png)
 
 
+![](./images/image25.png)
 
 
 Now back in AWS Step Functions console, provide `State machine name`, select the role just created, enable the logs and click on the `Create state machine` button.
 
+![](./images/image24.png)
 
 
 To test and execute your `Step Functions`, go inside the State Machine and click on the `Start execution` button, it’s ask to provide the input data which we have define in our code as a variables like
@@ -144,14 +156,17 @@ To test and execute your `Step Functions`, go inside the State Machine and click
 }
 ```
 
+![](./images/image5.png)
 
 
 Provide the `Name`, input the code and click on the `Start execution` button.
 
+![](./images/image18.png)
 
 
 After successful execution, your get your results as completion.
 
+![](./images/image11.png)
 
 
 Now try with the false code by starting new job execution as
@@ -162,8 +177,10 @@ Now try with the false code by starting new job execution as
 }
 ```
 
+![](./images/image15.png)
 
 
+![](./images/image27.png)
 
 
 Finally, we clean-up the resources so that we don’t incur any cost with the command.
@@ -207,12 +224,15 @@ Create a `State Machine` with the following code as
 }
 ```
 
+![](./images/image6.png)
 
 
+![](./images/image8.png)
 
 
 Now, we’ll create a `Lambda Function` which will be invoke by `Step Functions`. Open the Lambda console and create a simple hello function as
 
+![](./images/image28.png)
 
 
 Copy and paste the following code in the Lambda function.
@@ -225,21 +245,30 @@ exports.handler = (event, context, callback) => {
 
 Now copy the Lambda function `ARN` and paste into the Step function code.
 
+![](./images/image12.png)
 
 
+![](./images/image20.png)
 
 
+![](./images/image2.png)
 
 
+![](./images/image3.png)
 
 
+![](./images/image19.png)
 
 
+![](./images/image22.png)
 
 
 Execute another job with different name.
 
+![](./images/image1.png)
 
+
+![](./images/image23.png)
 
 
 Finally, we clean-up the resources so that we don’t incur any cost with the command.
