@@ -185,7 +185,7 @@ Now try with the false code by starting new job execution as
 
 Finally, we clean-up the resources so that we don’t incur any cost with the command.
 
-## Step Functions with Lambda
+# Step Functions with Lambda
 Create a `State Machine` with the following code as
 
 ``` json
